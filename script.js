@@ -24,7 +24,7 @@ async function fetchWeather() {
         const cityInputByUser = document.getElementById('cityInput').value;
         
         //This is where we will make our call to! Uses data obtained from the user and some constants we provide
-        const apiUrl = `api.openweathermap.org/data/2.5/forecast?lat=42&lon=-81&appid=${apiKey}&units=${units}&cnt=${cnt}`;
+        const apiUrl = `api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=${apiKey}`;
         
         //First variable is what makes the call, stores the raw data that is transmitted by open weather
         const response = await fetch(apiUrl);
@@ -85,9 +85,8 @@ function createWeatherDesc(weatherData) {
     const convertedDateAndTime = convertToLocalTime(dt);
     
     //Now we are actually editing teh div we made earlier. We tell index that the description variable is a div with the class 'weather_discription' and the text in that div will have been created by our java script. So while the index cannot read JS, JS will have already convered this line into a string, which is what index would be expecting to read.
-    description.innerHTML = `
-        <div class = "weather_description">${main.temp}${tempSymbol} - ${convertedDateAndTime.substring(10)} - ${convertedDateAndTime.substring(5, 10)}</div>
-    `;
+    description.innerHTML = `<div class = "weather_description">${main.temp}${tempSymbol} - ${convertedDateAndTime.substring(10)} - ${convertedDateAndTime.substring(5, 10)}</div>`;
+    
     //See above, but basically we are returning HTML code in the form of a JS string, to be read by index.
     return description;
 }
