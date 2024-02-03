@@ -29,7 +29,7 @@ async function fetchWeather() {
         //First variable is what makes the call, stores the raw data that is transmitted by open weather
         const response = await fetch(apiUrl);
         //This variable takes what open AI returns and makes it into useable data
-        const data = await response;
+        const data = await response.toJson;
         
         //Now some actual function
         //Displays an error message if invalid city, no city, or no data
