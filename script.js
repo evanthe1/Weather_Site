@@ -1,5 +1,5 @@
 //Not 100% about if I have input this api key correctly!
-const apiKey = '16e444700cd8d7823f2797bbe881ae8f';
+const apiKey = '';
 
 //To start we are declaring the divs from our HTML file so we are able to interact with and add information to them with JS
 const weatherContainer = document.getElementById('weather');
